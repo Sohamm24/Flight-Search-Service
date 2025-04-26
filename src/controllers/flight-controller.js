@@ -44,8 +44,9 @@ async function getAllFlights(req, res) {
 
 async function getFlight(req,res){
     try{
-        const flight = await FlightService.getFlight(req.params.id)
-        SuccessResponse.data=flight
+        console.log("id: ",req.params.id)
+        const Flight = await FlightService.getFlight(req.params.id)
+        SuccessResponse.data=Flight
         return res 
            .status(StatusCodes.OK)
            .json(SuccessResponse)
