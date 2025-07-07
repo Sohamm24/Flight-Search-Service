@@ -10,14 +10,14 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      this.belongsTo(models.Airplane,{
-        foreignKey: 'airplaneId',
-        as: 'airplaneDetail'
+      this.belongsTo(models.FlightInstance,{
+        foreignKey: 'flightInstanceId',
+        as: 'flightInstance'
       })
     }
   }
   Seat.init({
-    airplaneId:{
+    flightInstanceId:{
       type:DataTypes.INTEGER,
       allowNull:false
     }, 

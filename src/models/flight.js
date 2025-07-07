@@ -4,11 +4,6 @@ const {
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class flight extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
     static associate(models) {
       this.belongsTo(models.Airplane,{
          foreignKey:'airplaneId',
@@ -38,10 +33,10 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
     },
     arrivalTime:{
-      type: DataTypes.DATE,
+      type: DataTypes.TIME,
     },
     departureTime:{
-      type: DataTypes.DATE,
+      type: DataTypes.TIME,
     },
     price:{
       type: DataTypes.INTEGER,

@@ -45,6 +45,7 @@ class FlightRepository extends CrudRepository {
 
     async updateRemainingSeats(flightId,seats,dec=true){
         const transaction = await db.sequelize.transaction();
+        console.log(seats)
         try {
             await db.sequelize.query(`SELECT * from Flights WHERE Flights.id = ${flightId} FOR UPDATE;`);
             const flight = await Flight.findByPk(flightId);
